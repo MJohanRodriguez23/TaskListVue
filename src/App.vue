@@ -5,7 +5,7 @@ import { ref } from 'vue';
 const Tareas = ref(['Ninguna', 'Dormir', 'Descansar'])
 
 function deleteTask(index) {
-  console.log('papa, borrar el hijo', index)
+  Tareas.value.splice(index, 1)
 }
 </script>
 
