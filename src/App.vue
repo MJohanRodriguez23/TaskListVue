@@ -3,6 +3,10 @@ import TaskComponent from '@/components/TaskComponent.vue';
 import { ref } from 'vue';
 
 const Tareas = ref(['Ninguna', 'Dormir', 'Descansar'])
+
+function deleteTask(index) {
+  console.log('papa, borrar el hijo', index)
+}
 </script>
 
 <template>
@@ -19,6 +23,9 @@ const Tareas = ref(['Ninguna', 'Dormir', 'Descansar'])
     <TaskComponent
     v-for="(Tarea, index) in Tareas"
     :key="index"
+    :Tarea="Tarea"
+    :index="index"
+    @borrarHijo="deleteTask"
     />
     
 
